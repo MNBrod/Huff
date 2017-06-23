@@ -3,6 +3,7 @@ const {red, green, blue} = require('./colors.js')
 var PriorityQueue = function () {
   this.data = [];
 }
+
 PriorityQueue.prototype.push = function (tree) {
   if (!(tree instanceof Tree)) red("Can not push non-tree: ", tree);
   for (var i = 0; i < this.data.length; i++) {
@@ -16,3 +17,8 @@ PriorityQueue.prototype.push = function (tree) {
 PriorityQueue.prototype.pop = function () {
   return this.data.shift();
 }
+PriorityQueue.prototype.length = function () {
+  return this.data.length;
+}
+
+module.exports = {PriorityQueue}
